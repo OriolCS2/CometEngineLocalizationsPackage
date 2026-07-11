@@ -1,0 +1,34 @@
+{
+    "Product": "Default Product",
+    "Company": "Default Company",
+    "Version": "0.1",
+    "CursorHotspot": {
+        "x": 0,
+        "y": 0
+    },
+    "CursorImage": "0",
+    "Icon": "",
+    "Platforms": [
+        {
+            "Platform": 74
+        },
+        {
+            "Platform": 32,
+            "MinSDKVersion": 21,
+            "TargetSDKVersion": 35,
+            "OverrideDefaultPackageName": false,
+            "OverrideDefaultVersionName": false,
+            "VersionCode": 1,
+            "Permissions": {},
+            "TargetArchitectures": {
+                "arm64-v8a": true,
+                "armeabi-v7a": false,
+                "x86": false,
+                "x86_64": false
+            }
+        },
+        {
+            "Platform": 16
+        }
+    ]
+}

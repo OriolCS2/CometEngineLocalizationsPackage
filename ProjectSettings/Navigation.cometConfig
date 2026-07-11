@@ -1,0 +1,7 @@
+{
+    "CellSize": 1,
+    "EdgeConnectionMargin": 1,
+    "LinkConnectionRadius": 4,
+    "UseEdgeConnections": true,
+    "MergeRasterizerCellScale": 0.1
+}

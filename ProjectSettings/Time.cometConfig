@@ -1,0 +1,6 @@
+{
+    "TimeScale": 1,
+    "FixedTimeStep": 0.02,
+    "MaxTimeStep": 0.333,
+    "ParticlesTimeStep": 0.03
+}

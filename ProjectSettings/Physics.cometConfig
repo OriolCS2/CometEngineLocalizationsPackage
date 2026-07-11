@@ -1,0 +1,20 @@
+{
+    "Gravity": {
+        "x": 0,
+        "y": -9.81
+    },
+    "SubSteps": 4,
+    "SleepThreshold": 0.01,
+    "MaxTr": 100,
+    "ContactHertz": 30,
+    "ContactDamping": 1,
+    "MaxPushSpeed": 300,
+    "HitTriggers": true,
+    "BounceThresh": 1,
+    "Collisions": [
+        {
+            "ID": 1,
+            "Mask": 2147483647
+        }
+    ]
+}

@@ -1,0 +1,206 @@
+{
+    "Groups": [
+        {
+            "ID": "197262063163126120",
+            "Name": "UI",
+            "Actions": [
+                {
+                    "ID": "6311055504311527634",
+                    "Name": "Navigate",
+                    "ValueType": 2,
+                    "PressPoint": 0.5,
+                    "Bindings": [
+                        {
+                            "Kind": 1,
+                            "Mode": 1,
+                            "Parts": [
+                                {
+                                    "Device": 0,
+                                    "Code": 82
+                                },
+                                {
+                                    "Device": 0,
+                                    "Code": 81
+                                },
+                                {
+                                    "Device": 0,
+                                    "Code": 80
+                                },
+                                {
+                                    "Device": 0,
+                                    "Code": 79
+                                }
+                            ]
+                        },
+                        {
+                            "Kind": 1,
+                            "Mode": 1,
+                            "Parts": [
+                                {
+                                    "Device": 0,
+                                    "Code": 26
+                                },
+                                {
+                                    "Device": 0,
+                                    "Code": 22
+                                },
+                                {
+                                    "Device": 0,
+                                    "Code": 4
+                                },
+                                {
+                                    "Device": 0,
+                                    "Code": 7
+                                }
+                            ]
+                        },
+                        {
+                            "Kind": 1,
+                            "Mode": 1,
+                            "Parts": [
+                                {
+                                    "Device": 2,
+                                    "Code": 11,
+                                    "Number": 0
+                                },
+                                {
+                                    "Device": 2,
+                                    "Code": 12,
+                                    "Number": 0
+                                },
+                                {
+                                    "Device": 2,
+                                    "Code": 13,
+                                    "Number": 0
+                                },
+                                {
+                                    "Device": 2,
+                                    "Code": 14,
+                                    "Number": 0
+                                }
+                            ]
+                        },
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 2,
+                                    "Code": 200,
+                                    "Number": 0
+                                }
+                            ],
+                            "Processors": [
+                                {
+                                    "Type": 0,
+                                    "Param1": 0.25,
+                                    "Param2": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ID": "6544688759587859436",
+                    "Name": "Submit",
+                    "ValueType": 0,
+                    "PressPoint": 0.5,
+                    "Bindings": [
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 0,
+                                    "Code": 40
+                                }
+                            ]
+                        },
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 0,
+                                    "Code": 44
+                                }
+                            ]
+                        },
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 2,
+                                    "Code": 0,
+                                    "Number": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ID": "3330002776493933390",
+                    "Name": "Cancel",
+                    "ValueType": 0,
+                    "PressPoint": 0.5,
+                    "Bindings": [
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 0,
+                                    "Code": 41
+                                }
+                            ]
+                        },
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 2,
+                                    "Code": 1,
+                                    "Number": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ID": "6614031161999992305",
+                    "Name": "Click",
+                    "ValueType": 0,
+                    "PressPoint": 0.5,
+                    "Bindings": [
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 1,
+                                    "Code": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ID": "2128844316294618362",
+                    "Name": "Point",
+                    "ValueType": 2,
+                    "PressPoint": 0.5,
+                    "Bindings": [
+                        {
+                            "Kind": 0,
+                            "Control": [
+                                {
+                                    "Device": 1,
+                                    "Code": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Controller": {
+        "JoystickDeadZone": 0.25,
+        "TriggerDeadZone": 0.25
+    }
+}

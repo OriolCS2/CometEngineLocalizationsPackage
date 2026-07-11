@@ -1,0 +1,41 @@
+{
+    "StartMode": 0,
+    "Resizable": true,
+    "Bordered": true,
+    "Size": {
+        "x": 1024,
+        "y": 768
+    },
+    "Position": {
+        "x": 0,
+        "y": 0
+    },
+    "InitialPositionMode": 1,
+    "InitialScreenIndex": 0,
+    "ViewportAspectRatio": 0,
+    "CustomAspectRatio": {
+        "x": 16,
+        "y": 9
+    },
+    "KeepAspectRatioOnFullScreen": false,
+    "KeepAspectRatioOnFullScreenDesktop": false,
+    "MinimumSize": {
+        "x": 878,
+        "y": 321
+    },
+    "MaximumSize": {
+        "x": 0,
+        "y": 0
+    },
+    "AlwaysOnTop": false,
+    "TransparentWindow": false,
+    "HideFromTaskbar": false,
+    "ImmersiveMode": true,
+    "ValidOrientations": 30,
+    "SplashScreenEnabled": true,
+    "SplashScreenWindowSize": {
+        "x": 588,
+        "y": 357
+    },
+    "SplashScreenMinimumDisplayTime": 2000
+}
