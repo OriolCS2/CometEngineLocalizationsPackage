@@ -1,0 +1,18 @@
+{
+    "schemaVersion": 1,
+    "dependencies": {},
+    "registries": [
+        {
+            "name": "Comet Marketplace",
+            "url": "https:\/\/wahwdszfywobmyyuyihu.supabase.co",
+            "scopes": [
+                "*"
+            ]
+        }
+    ],
+    "resolutionStrategy": "lowest",
+    "enableLock": true,
+    "showPreRelease": false,
+    "pinned": [],
+    "lock": {}
+}

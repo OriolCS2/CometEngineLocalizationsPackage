@@ -1,0 +1,283 @@
+{
+    "Name": "TestScene",
+    "Path": "TestScene",
+    "RootID": "9305796816175434968",
+    "Entities": [
+        {
+            "Name": "Main Camera",
+            "ID": "6579368582398982853",
+            "ParentID": "9305796816175434968",
+            "ChildIndex": 0,
+            "Enabled": true,
+            "IsUpEnabled": true,
+            "IsStatic": false,
+            "Layer": 1,
+            "Tag": "Untagged",
+            "Valid": true,
+            "Selectable": true,
+            "UpSelectable": true,
+            "Visible": true,
+            "UpVisible": true,
+            "Behaviours": {
+                "5376958066715589233": {
+                    "Type": "Transform",
+                    "Enabled": true,
+                    "Position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Rotation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                    },
+                    "Scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                "11596376033622208632": {
+                    "Type": "Camera",
+                    "Enabled": true,
+                    "CullingMask": 2147483647,
+                    "BackCol": {
+                        "r": 0.192,
+                        "g": 0.302,
+                        "b": 0.475,
+                        "a": 1
+                    },
+                    "FarPlane": 200,
+                    "NearPlane": 0,
+                    "Size": 5,
+                    "PixelPerfect": false,
+                    "PixelPerfectPPU": 100,
+                    "PixelPerfectRefResX": 320,
+                    "PixelPerfectRefResY": 180,
+                    "PixelPerfectUpscaleRT": true,
+                    "PixelPerfectPixelSnapping": true,
+                    "PixelPerfectCropX": false,
+                    "PixelPerfectCropY": false,
+                    "PixelPerfectStretchFill": false,
+                    "Depth": -1,
+                    "Viewport": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 1,
+                        "w": 1
+                    },
+                    "Texture": "0"
+                },
+                "12704188160403892300": {
+                    "Type": "AudioListener",
+                    "Enabled": true
+                }
+            }
+        },
+        {
+            "Name": "Canvas",
+            "ID": "17997984741407426743",
+            "ParentID": "9305796816175434968",
+            "ChildIndex": 1,
+            "Enabled": true,
+            "IsUpEnabled": true,
+            "IsStatic": false,
+            "Layer": 1,
+            "Tag": "Untagged",
+            "Valid": true,
+            "Selectable": true,
+            "UpSelectable": true,
+            "Visible": true,
+            "UpVisible": true,
+            "Behaviours": {
+                "11429464778007009272": {
+                    "Type": "RectTransform",
+                    "Enabled": true
+                },
+                "9135330937737244225": {
+                    "Type": "Canvas",
+                    "Enabled": true,
+                    "RenderMode": 0,
+                    "OverrideSorting": false,
+                    "ScreenType": 0,
+                    "SortingOrder": 0,
+                    "ScaleMode": 1,
+                    "ReferenceResolution": {
+                        "x": 1920,
+                        "y": 1080
+                    },
+                    "MatchMode": 0,
+                    "Value": 0
+                }
+            }
+        },
+        {
+            "Name": "Input Handler",
+            "ID": "15215943574971701316",
+            "ParentID": "9305796816175434968",
+            "ChildIndex": 2,
+            "Enabled": true,
+            "IsUpEnabled": true,
+            "IsStatic": false,
+            "Layer": 1,
+            "Tag": "Untagged",
+            "Valid": true,
+            "Selectable": true,
+            "UpSelectable": true,
+            "Visible": true,
+            "UpVisible": true,
+            "Behaviours": {
+                "7210309153193092984": {
+                    "Type": "Transform",
+                    "Enabled": true,
+                    "Position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Rotation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                    },
+                    "Scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                "11913211955225274732": {
+                    "Type": "InputHandler",
+                    "Enabled": true,
+                    "RepeatDelay": 0.5,
+                    "RepeatRate": 0.1,
+                    "Selected": {
+                        "EntID": "0",
+                        "EntSharedID": "0",
+                        "IsMainInstanciableEntity": false,
+                        "Path": [],
+                        "OutsideEnt": false,
+                        "RootShared": "0",
+                        "RootInside": false,
+                        "BehaType": 0,
+                        "BehaID": "0"
+                    },
+                    "MouseLeftClickGroup": "197262063163126120",
+                    "MouseLeftClickAction": "6614031161999992305",
+                    "MouseMotionGroup": "197262063163126120",
+                    "MouseMotionAction": "2128844316294618362",
+                    "NavigateGroup": "197262063163126120",
+                    "NavigateAction": "6311055504311527634",
+                    "SubmitGroup": "197262063163126120",
+                    "SubmitAction": "6544688759587859436",
+                    "CancelGroup": "197262063163126120",
+                    "CancelAction": "3330002776493933390"
+                }
+            }
+        },
+        {
+            "Name": "Text",
+            "ID": "10734518975403316766",
+            "ParentID": "17997984741407426743",
+            "ChildIndex": 0,
+            "Enabled": true,
+            "IsUpEnabled": true,
+            "IsStatic": false,
+            "Layer": 1,
+            "Tag": "Untagged",
+            "Valid": true,
+            "Selectable": true,
+            "UpSelectable": true,
+            "Visible": true,
+            "UpVisible": true,
+            "Behaviours": {
+                "10621460497495568976": {
+                    "Type": "RectTransform",
+                    "Enabled": true,
+                    "Pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "AnchorMin": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "AnchorMax": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "Size": {
+                        "x": 601.739,
+                        "y": 228.931
+                    },
+                    "Left": -300.87,
+                    "Right": -300.87,
+                    "Top": -114.466,
+                    "Bottom": -114.466,
+                    "Position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Rotation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                    },
+                    "Scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                "2324746240297844333": {
+                    "Type": "Text",
+                    "Enabled": true,
+                    "Text": "Present",
+                    "Font": "14",
+                    "BBCodeEnabled": false,
+                    "Bold": false,
+                    "Italic": false,
+                    "Underline": false,
+                    "Strikethrough": false,
+                    "FontSize": 168.1,
+                    "AutoFontSize": false,
+                    "MinAutoFontSize": 1,
+                    "MaxAutoFontSize": 200,
+                    "HorizontalAlignment": 0,
+                    "VerticalAlignment": 0,
+                    "Overflow": 0,
+                    "Wrapping": true,
+                    "AutoContentSizeMode": 3,
+                    "Color": {
+                        "r": 1,
+                        "g": 1,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "Material": "11",
+                    "MouseFilter": 0
+                },
+                "16212358118936808009": {
+                    "Type": "Script",
+                    "Enabled": true,
+                    "ScriptID": "18113529040442988202",
+                    "Fields": {
+                        "Locale& locale": {
+                            "IsClass": true,
+                            "Value": {
+                                "string& key": {
+                                    "Value": "items_present"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
