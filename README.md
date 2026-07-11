@@ -29,37 +29,37 @@ For your translation tabs:
 *   **Subsequent Columns:** One column for each **Language** you support.
 *   *Note: Ensure the language order is identical across all tabs.*
 
-![Google Sheet Setup](TutorialImages/Tuto1.png)
+![Google Sheet Setup](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto1.png)
 
 ### 2. Identify Sheet GIDs
 Each tab in a Google Sheet has a unique ID called a **GID**, found at the end of the URL (e.g., `gid=829223160`). 
 In your `Index` tab, list the name of each tab you want to import and its corresponding GID.
 
-![Index Tab Setup](TutorialImages/Tuto2.png)
+![Index Tab Setup](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto2.png)
 
 ### 3. Configure Comet Editor
 Open the Comet Editor and navigate to **Project Settings > Localizations**.
 *   Paste your **Google Sheet URL** (ensure "Anyone with the link" has at least viewer access).
 *   Enter the **GID** of your `Index` tab.
 
-![Comet Configuration](TutorialImages/Tuto3.png)
+![Comet Configuration](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto3.png)
 
 ### 4. Fetch Translations
 To download your data, click **Regenerate Localizations** in the Project Settings or go to **Localizations > Generate** in the main menu bar. 
 
 Once triggered, the system will download each tab as a `.csv` file into the `Assets/RuntimeAssets/Localizations` directory. Perform this action whenever you update your Google Sheet.
 
-![Regenerate Localizations](TutorialImages/Tuto4.png)
+![Regenerate Localizations](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto4.png)
 
 ### 5. Initialize the Manager
 Go to **Project Settings > Unique Instances**, click **Add Script**, and select the `LanguageManager`. This ensures the localization system is ready when your project runs.
 
-![Language Manager Setup](TutorialImages/Tuto5.png)
+![Language Manager Setup](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto5.png)
 
 ### 6. Localizing UI Text
 To localize UI elements, add the `LocaleText` behaviour to your text entities. Use this behaviour to assign the translation key; the text will automatically update to reflect the active language.
 
-![LocaleText Behaviour](TutorialImages/Tuto6.png)
+![LocaleText Behaviour](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto6.png)
 
 ---
 
@@ -85,7 +85,7 @@ The **Localizations** menu provides quick access to essential tools:
 *   **Localization Manager:** Open the dedicated table view.
 *   **Remote Source:** Quickly open the linked Google Sheet.
 
-![Menu Bar](TutorialImages/Tuto7.png)
+![Menu Bar](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto7.png)
 
 ### Localization Manager
 A dedicated window to browse and manage your translations inside the editor. It includes:
@@ -93,4 +93,4 @@ A dedicated window to browse and manage your translations inside the editor. It 
 *   **Search:** Search for specific keys or values.
 *   **Validation:** Quickly identify missing translations (empty values).
 
-![Localization Manager](TutorialImages/Tuto8.png)
+![Localization Manager](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto8.png)
