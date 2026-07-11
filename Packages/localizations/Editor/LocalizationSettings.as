@@ -36,9 +36,15 @@ namespace Localization
 		}
 
 		[ShowButton("Regenerate Localizations")]
-		void Generate()
+		private void Generate()
 		{
 			LocalizationEditorManager::get.Regenerate();
+		}
+
+		[ShowButton("Open Sheet")]
+		private void OpenSheet()
+		{
+			App::OpenURL(GoogleSheetURL);
 		}
 
 		ProjectSettingInfo GetInfo()
