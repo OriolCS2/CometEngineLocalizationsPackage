@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "slug": "localizations",
+    "displayName": "Localizations",
+    "version": "1.0.0",
+    "packageType": "package",
+    "summary": "Easy way to handle localizations using Google Sheet.",
+    "description": "# Localizations\n\nSet the URL of your Google Sheet document that contains the pages of all translations and they will be imported to Comet and managed automatically.",
+    "author": {
+        "name": "CometEngine",
+        "email": "contrasnya@gmail.com",
+        "url": ""
+    },
+    "license": "MIT",
+    "category": "Scripts",
+    "tags": [
+        "dialogue",
+        "scripts",
+        "localizations",
+        "locale",
+        "translation"
+    ],
+    "homepageUrl": "",
+    "repoUrl": "https:\/\/github.com\/OriolCS2\/CometEngineLocalizationsPackage",
+    "documentationUrl": "",
+    "changelogUrl": "",
+    "minEngineVersion": "2.8.0",
+    "dependencies": {},
+    "samples": [],
+    "hiddenFolders": [],
+    "hideInEditor": false
+}
