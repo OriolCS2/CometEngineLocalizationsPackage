@@ -220,6 +220,7 @@ namespace Localization
 				{
 					string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
 					if (!localizationsRootFolder.isEmpty())
+					if (localizationsRootFolder.isEmpty())
 					{
 						Debug::LogError("Localizations path is empty. Set a path in order to generate the localizations (ProjectSettings -> Localizations).");
 						return;
