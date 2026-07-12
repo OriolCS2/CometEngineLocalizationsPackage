@@ -38,7 +38,8 @@ namespace Localization
 		void Awake()
 		{
 			pages.resize(0);
-			array<string> files = FileSystem::GetFilesAt(LanguageManager::LOCALIZATIONS_ROOT_FOLDER);
+			string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
+			array<string> files = FileSystem::GetFilesAt(localizationsRootFolder);
 			uint filesCount = files.length();
 			for (uint i = 0; i < filesCount; i++)
 			{
@@ -50,7 +51,7 @@ namespace Localization
 					Page@page = Page();
 					page.name = pageName;
 
-					string fileData = FileSystem::Load(LanguageManager::LOCALIZATIONS_ROOT_FOLDER + fileName);
+					string fileData = FileSystem::Load(localizationsRootFolder + fileName);
 					if (!fileData.isEmpty())
 					{
 						array<string> lines = fileData.split("\n");

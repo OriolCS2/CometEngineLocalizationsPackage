@@ -36,7 +36,8 @@ namespace Localization
 			availableLanguages.resize(0);
 			currentLocalizationData.deleteAll();
 
-			array<string> files = FileSystem::GetFilesAt(LanguageManager::LOCALIZATIONS_ROOT_FOLDER);
+			string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
+			array<string> files = FileSystem::GetFilesAt(localizationsRootFolder);
 			uint filesCount = files.length();
 			for (uint i = 0; i < filesCount; i++)
 			{
@@ -46,7 +47,7 @@ namespace Localization
 				{
 					string pageName = fileName.substr(0, fileName.length() - 4).toLowerCase();
 
-					string fileData = FileSystem::Load(LanguageManager::LOCALIZATIONS_ROOT_FOLDER + fileName);
+					string fileData = FileSystem::Load(localizationsRootFolder + fileName);
 					if (!fileData.isEmpty())
 					{
 						array<string> lines = fileData.split("\n");
@@ -63,7 +64,7 @@ namespace Localization
 
 								if (currentLanguage.isEmpty() || availableLanguages.find(currentLanguage) < 0)
 								{
-									availableLanguages.find(LanguageManager::DEFAULT_LANGUAGE) >= 0 ? currentLanguage = LanguageManager::DEFAULT_LANGUAGE : currentLanguage = availableLanguages[0];
+									availableLanguages.find(LocalizationSettings::DEFAULT_LANGUAGE) >= 0 ? currentLanguage = LocalizationSettings::DEFAULT_LANGUAGE : currentLanguage = availableLanguages[0];
 								}
 							}
 

@@ -51,12 +51,7 @@ Once triggered, the system will download each tab as a `.csv` file into the `Ass
 
 ![Regenerate Localizations](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto4.png)
 
-### 5. Initialize the Manager
-Go to **Project Settings > Unique Instances**, click **Add Script**, and select the `LanguageManager`. This ensures the localization system is ready when your project runs.
-
-![Language Manager Setup](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto5.png)
-
-### 6. Localizing UI Text
+### 5. Localizing UI Text
 To localize UI elements, add the `LocaleText` behaviour to your text entities. Use this behaviour to assign the translation key; the text will automatically update to reflect the active language.
 
 ![LocaleText Behaviour](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto6.png)

@@ -21,6 +21,11 @@ namespace Localization
 			LoadLocalizations();
 		}
 
+		void Init()
+		{
+			LocalizationSettings::Get().onRegenerateLocalizationsRequested.Add(CometDelegate(Regenerate));
+		}
+
 		string GetLocalization(const string&in key)
 		{
 			return language.GetLocalization(key);
@@ -33,7 +38,7 @@ namespace Localization
 
 		private void LoadLocalizations()
 		{
-			language.Load(EditorPrefs::Local().GetString(LOCALIZATIONS_CURRENT_LANGUAGE_KEY, LanguageManager::DEFAULT_LANGUAGE));
+			language.Load(EditorPrefs::Local().GetString(LOCALIZATIONS_CURRENT_LANGUAGE_KEY, LocalizationSettings::DEFAULT_LANGUAGE));
 			CalculateFilteredKeys();
 		}
 
@@ -213,11 +218,23 @@ namespace Localization
 				string indexPageData;
 				if (Shell::ExecuteCommandWithOutput("curl -sL \"" + LocalizationSettings::Get().GoogleSheetDownloadURL + LocalizationSettings::Get().GoogleSheetIndexPageGID + "\"", indexPageData))
 				{
+					string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
+					if (!localizationsRootFolder.isEmpty())
+					{
+						Debug::LogError("Localizations path is empty. Set a path in order to generate the localizations (ProjectSettings -> Localizations).");
+						return;
+					}
+
 					array<string> pages = indexPageData.split("\n");
 					uint totalPages = pages.length();
 					if (totalPages > 0)
 					{
-						FileSystem::CreateDir(LanguageManager::LOCALIZATIONS_ROOT_FOLDER);
+						FileSystem::CreateDir(localizationsRootFolder);
+						if (!FileSystem::Exists(localizationsRootFolder))
+						{
+							Debug::LogError("Localizations path folder could not be created. Set a valid path in order to generate the localizations (ProjectSettings -> Localizations).");
+							return;
+						}
 
 						array<string> filesCreated;
 						for (uint i = 0; i < pages.length(); i++)
@@ -240,10 +257,10 @@ namespace Localization
 
 						if (!filesCreated.isEmpty())
 						{
-							array<string> allLocalizationFiles = FileSystem::GetFilesAt(LanguageManager::LOCALIZATIONS_ROOT_FOLDER);
+							array<string> allLocalizationFiles = FileSystem::GetFilesAt(localizationsRootFolder);
 							for (uint i = 0; i < allLocalizationFiles.length(); i++)
 							{
-								string file = LanguageManager::LOCALIZATIONS_ROOT_FOLDER + allLocalizationFiles[i];
+								string file = localizationsRootFolder + allLocalizationFiles[i];
 								if (filesCreated.find(file) < 0)
 								{
 									FileSystem::Remove(file);
@@ -259,7 +276,7 @@ namespace Localization
 						}
 						else
 						{
-							FileSystem::RemoveAll(LanguageManager::LOCALIZATIONS_ROOT_FOLDER);
+							FileSystem::RemoveAll(localizationsRootFolder);
 						}
 					}
 				}
@@ -309,7 +326,7 @@ namespace Localization
 					}
 				}
 
-				string filePath = LanguageManager::LOCALIZATIONS_ROOT_FOLDER + pageName + ".csv";
+				string filePath = LocalizationSettings::Get().LocalizationsPath + pageName + ".csv";
 				FileSystem::Save(filePath, filteredPageData);
 				return filePath;
 			}

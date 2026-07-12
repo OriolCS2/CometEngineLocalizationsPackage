@@ -210,13 +210,13 @@
                         "y": 0.5
                     },
                     "Size": {
-                        "x": 601.739,
-                        "y": 228.931
+                        "x": 0,
+                        "y": 0
                     },
-                    "Left": -300.87,
-                    "Right": -300.87,
-                    "Top": -114.466,
-                    "Bottom": -114.466,
+                    "Left": 0,
+                    "Right": 0,
+                    "Top": 0,
+                    "Bottom": 0,
                     "Position": {
                         "x": 0,
                         "y": 0,
@@ -237,7 +237,6 @@
                 "2324746240297844333": {
                     "Type": "Text",
                     "Enabled": true,
-                    "Text": "Present",
                     "Font": "14",
                     "BBCodeEnabled": false,
                     "Bold": false,
@@ -271,7 +270,7 @@
                             "IsClass": true,
                             "Value": {
                                 "string& key": {
-                                    "Value": "items_present"
+                                    "Value": ""
                                 }
                             }
                         }
