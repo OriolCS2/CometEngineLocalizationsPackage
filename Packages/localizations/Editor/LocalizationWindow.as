@@ -38,7 +38,7 @@ namespace Localization
 		void Awake()
 		{
 			pages.resize(0);
-			string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
+			string localizationsRootFolder = LocalizationSettings::Get().AssetsLocalizationsPath;
 			array<string> files = FileSystem::GetFilesAt(localizationsRootFolder);
 			uint filesCount = files.length();
 			for (uint i = 0; i < filesCount; i++)

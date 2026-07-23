@@ -6,13 +6,21 @@ namespace Localization
 	class /*@*/ LocalizationSettings : ProjectSetting
 	{
 		[Serialize, Tooltip("Where should the localizations be downloaded?")]
-		private string localizationsPath = "RuntimeAssets/Localizations";
+		private string localizationsPath = "Localizations";
+
+		string AssetsLocalizationsPath
+		{
+			get
+			{
+				return "Assets/" + LocalizationsPath;
+			}
+		}
 
 		string LocalizationsPath
 		{
 			get
 			{
-				string path = "Assets/" + localizationsPath;
+				string path = localizationsPath;
 				if (path.at(path.length() - 1) != "/")
 				{
 					path += "/";
@@ -67,14 +75,6 @@ namespace Localization
 			App::OpenURL(GoogleSheetURL);
 		}
 
-		void OnEdited()
-		{
-			if (LocalizationsPath.findFirst("RuntimeAssets") < 0)
-			{
-				Debug::LogError("Localizations path must a `RuntimeAssets` folder.");
-			}
-		}
-
 		ProjectSettingInfo GetInfo()
 		{
 			ProjectSettingInfo info;
@@ -98,5 +98,6 @@ namespace Localization
 		}
 
 		string DEFAULT_LANGUAGE = "English";
+		string CONTENT_GROUP = "Localizations";
 	}
 }

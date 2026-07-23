@@ -218,8 +218,7 @@ namespace Localization
 				string indexPageData;
 				if (Shell::ExecuteCommandWithOutput("curl -sL \"" + LocalizationSettings::Get().GoogleSheetDownloadURL + LocalizationSettings::Get().GoogleSheetIndexPageGID + "\"", indexPageData))
 				{
-					string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
-					if (!localizationsRootFolder.isEmpty())
+					string localizationsRootFolder = LocalizationSettings::Get().AssetsLocalizationsPath;
 					if (localizationsRootFolder.isEmpty())
 					{
 						Debug::LogError("Localizations path is empty. Set a path in order to generate the localizations (ProjectSettings -> Localizations).");
@@ -236,6 +235,13 @@ namespace Localization
 							Debug::LogError("Localizations path folder could not be created. Set a valid path in order to generate the localizations (ProjectSettings -> Localizations).");
 							return;
 						}
+
+						if (!AssetDataBase::ExistGroup(LocalizationSettings::CONTENT_GROUP))
+						{
+							AssetDataBase::CreateContentGroup(LocalizationSettings::CONTENT_GROUP);
+						}
+						AssetDataBase::SetContentGroup(LocalizationSettings::Get().LocalizationsPath, LocalizationSettings::CONTENT_GROUP);
+						AssetDataBase::SetContentState(LocalizationSettings::Get().LocalizationsPath, ContentState::GROUP);
 
 						array<string> filesCreated;
 						for (uint i = 0; i < pages.length(); i++)
@@ -327,7 +333,7 @@ namespace Localization
 					}
 				}
 
-				string filePath = LocalizationSettings::Get().LocalizationsPath + pageName + ".csv";
+				string filePath = LocalizationSettings::Get().AssetsLocalizationsPath + pageName + ".csv";
 				FileSystem::Save(filePath, filteredPageData);
 				return filePath;
 			}

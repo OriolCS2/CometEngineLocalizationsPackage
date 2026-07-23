@@ -1,5 +1,8 @@
 {
     "Fields": {
+        "string& localizationsPath": {
+            "Value": "Localizations"
+        },
         "string& googleSheetURL": {
             "Value": "https:\/\/docs.google.com\/spreadsheets\/d\/1EuyhfjAqdpZF1JTDibjQxD4U8rOQHq_BWthOUiMJ7iE"
         },

@@ -1,11 +1,5 @@
 {
     "AutoInstanceOnStart": true,
     "RemoveInstancesWhenLoadingSceneModeClearAll": false,
-    "CreateUniqueInstancesAfterLoadingSceneModeClearAll": true,
-    "UniqueInstances": [
-        {
-            "Type": 0,
-            "ID": "18113529040442988202"
-        }
-    ]
+    "CreateUniqueInstancesAfterLoadingSceneModeClearAll": true
 }

@@ -36,18 +36,19 @@ namespace Localization
 			availableLanguages.resize(0);
 			currentLocalizationData.deleteAll();
 
-			string localizationsRootFolder = LocalizationSettings::Get().LocalizationsPath;
-			array<string> files = FileSystem::GetFilesAt(localizationsRootFolder);
-			uint filesCount = files.length();
+			array<AssetHandle> localizationFiles = Assets::GetGroupAssets(LocalizationSettings::CONTENT_GROUP);
+			uint filesCount = localizationFiles.length();
 			for (uint i = 0; i < filesCount; i++)
 			{
-				string fileName = files[i];
-				array<string> fileParts = fileName.split(".");
-				if (fileParts.length() >= 2 && fileParts[fileParts.length() - 1] == "csv")
+				AssetHandle handle = localizationFiles[i];
+				string fileName = Assets::GetAddress(handle);
+				DataAsset localizationData = cast<DataAsset>(Assets::Load(handle));
+				array<string> fileParts = fileName.split("/");
+				if (!fileParts.isEmpty())
 				{
-					string pageName = fileName.substr(0, fileName.length() - 4).toLowerCase();
+					string pageName = fileParts[fileParts.length() - 1];
 
-					string fileData = FileSystem::Load(localizationsRootFolder + fileName);
+					string fileData = localizationData.data;
 					if (!fileData.isEmpty())
 					{
 						array<string> lines = fileData.split("\n");

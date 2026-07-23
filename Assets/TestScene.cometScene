@@ -61,6 +61,7 @@
                     "PixelPerfectCropX": false,
                     "PixelPerfectCropY": false,
                     "PixelPerfectStretchFill": false,
+                    "PostProcessing": true,
                     "Depth": -1,
                     "Viewport": {
                         "x": 0,
@@ -210,13 +211,13 @@
                         "y": 0.5
                     },
                     "Size": {
-                        "x": 0,
-                        "y": 0
+                        "x": 526.39,
+                        "y": 228.931
                     },
-                    "Left": 0,
-                    "Right": 0,
-                    "Top": 0,
-                    "Bottom": 0,
+                    "Left": -263.195,
+                    "Right": -263.195,
+                    "Top": -114.466,
+                    "Bottom": -114.466,
                     "Position": {
                         "x": 0,
                         "y": 0,
@@ -237,6 +238,7 @@
                 "2324746240297844333": {
                     "Type": "Text",
                     "Enabled": true,
+                    "Text": "Regalo",
                     "Font": "14",
                     "BBCodeEnabled": false,
                     "Bold": false,
@@ -270,7 +272,7 @@
                             "IsClass": true,
                             "Value": {
                                 "string& key": {
-                                    "Value": ""
+                                    "Value": "Items_present"
                                 }
                             }
                         }
