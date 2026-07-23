@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "slug": "localizations",
     "displayName": "Localizations",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "packageType": "package",
     "summary": "Easy way to handle localizations using Google Sheet.",
     "description": "# Localizations\n\nSet the URL of your Google Sheet document that contains the pages of all translations and they will be imported to Comet and managed automatically.",
