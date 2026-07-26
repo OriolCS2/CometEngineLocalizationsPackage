@@ -229,8 +229,7 @@ namespace Localization
 					uint totalPages = pages.length();
 					if (totalPages > 0)
 					{
-						FileSystem::CreateDir(localizationsRootFolder);
-						if (!FileSystem::Exists(localizationsRootFolder))
+						if (!AssetDataBase::CreateDirectory(localizationsRootFolder))
 						{
 							Debug::LogError("Localizations path folder could not be created. Set a valid path in order to generate the localizations (ProjectSettings -> Localizations).");
 							return;
@@ -270,7 +269,7 @@ namespace Localization
 								string file = localizationsRootFolder + allLocalizationFiles[i];
 								if (filesCreated.find(file) < 0)
 								{
-									FileSystem::Remove(file);
+									AssetDataBase::DestroyResource(file);
 								}
 							}
 
@@ -283,7 +282,7 @@ namespace Localization
 						}
 						else
 						{
-							FileSystem::RemoveAll(localizationsRootFolder);
+							AssetDataBase::DestroyResource(localizationsRootFolder);
 						}
 					}
 				}
@@ -334,7 +333,11 @@ namespace Localization
 				}
 
 				string filePath = LocalizationSettings::Get().AssetsLocalizationsPath + pageName + ".csv";
-				FileSystem::Save(filePath, filteredPageData);
+				if (!AssetDataBase::CreateResource(filePath, filteredPageData, true))
+				{
+					Debug::LogError("Failed to write the localization page: " + pageName);
+					return "";
+				}
 				return filePath;
 			}
 			else
