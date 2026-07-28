@@ -2,6 +2,10 @@
 
 All notable changes to this package are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.0.4]
+### Fixed
+- Corrected readme.
+
 ## [1.0.3]
 ### Fixed
 - Fixed first import ever bugs.
