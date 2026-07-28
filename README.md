@@ -47,7 +47,7 @@ Open the Comet Editor and navigate to **Project Settings > Localizations**.
 ### 4. Fetch Translations
 To download your data, click **Regenerate Localizations** in the Project Settings or go to **Localizations > Generate** in the main menu bar. 
 
-Once triggered, the system will download each tab as a `.csv` file into the `Assets/RuntimeAssets/Localizations` directory. Perform this action whenever you update your Google Sheet.
+Once triggered, the system will download each tab as a `.csv` file into the directory you choose at **Project Settings > Localizations > Localizations Path**. Perform this action whenever you update your Google Sheet.
 
 ![Regenerate Localizations](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto4.png)
 
@@ -66,7 +66,7 @@ You can easily interact with the localization system via code using the followin
 | :--- | :--- |
 | `Language::get.currentLanguage` | Returns the currently active language. |
 | `Language::get.availableLanguages` | Returns a list of all imported languages. |
-| `Language::get.Load(string language)` | Switches the project's language at runtime. |
+| `Language::get.Load(string language)` | Switches the project's language. |
 | `Language::get.GetLocalization(string key)` | Returns the translated value for a specific key in the current language. |
 
 ---
