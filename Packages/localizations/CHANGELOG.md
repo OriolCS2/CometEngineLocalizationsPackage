@@ -2,6 +2,10 @@
 
 All notable changes to this package are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.0.6]
+### Fixed
+- Fixed crash when importing for the first time.
+
 ## [1.0.5]
 ### Fixed
 - New import settings from 2.9.3 CometEngine.

@@ -78,7 +78,7 @@ namespace Localization
 			string currentKey = locale.GetKey();
 			if (GUI::BeginCombo("##ComboKey", currentKey, GUI::ComboFlags::HeightLarge))
 			{
-				lastOpened = locale;
+				@lastOpened = locale;
 				GUI::AlignTextToFramePadding();
 				GUI::SetCursorPosX(GUI::GetCursorPosX() + 3.0f);
 				GUI::Text(RawIcon::Search);
