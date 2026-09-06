@@ -16,6 +16,7 @@ namespace Localization
 
 		string GetValue()
 		{
+			Language@ currentLanguage = Language::get;
 			if (currentLanguage is null)
 			{
 				return key;
