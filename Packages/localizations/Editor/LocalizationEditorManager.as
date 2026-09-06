@@ -17,7 +17,7 @@ namespace Localization
 
 		LocalizationEditorManager()
 		{
-			LocalizationEditorManager::get = this;
+			@LocalizationEditorManager::get = this;
 			LoadLocalizations();
 		}
 

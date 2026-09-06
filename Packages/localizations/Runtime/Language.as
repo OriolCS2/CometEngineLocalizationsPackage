@@ -10,12 +10,15 @@ namespace Localization
 
 		Language()
 		{
-			Language::get = this;
+			@Language::get = this;
 		}
 
 		~Language()
 		{
-			Language::get = null;
+			if (Language::get is this)
+			{
+				@Language::get = null;
+			}
 		}
 
 		string GetLocalization(const string&in key)
