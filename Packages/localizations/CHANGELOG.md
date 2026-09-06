@@ -2,6 +2,10 @@
 
 All notable changes to this package are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.0.7]
+### Fixed
+- Asking a Locale for its value no longer throws when no language is loaded yet, which happened while the editor was leaving play mode and rebuilding the scene. The key is returned instead, and a LocaleText leaves the text it already has alone.
+
 ## [1.0.6]
 ### Fixed
 - Fixed crash when importing for the first time.

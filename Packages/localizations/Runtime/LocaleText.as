@@ -17,6 +17,11 @@ namespace Localization
 				Debug::LogWarning("LocaleText behaviour requires a Text behaviour on the same entity.");
 				return;
 			}
+			if (Language::get is null)
+			{
+				return;
+			}
+
 			text.text = locale.GetValue();
 		}
 

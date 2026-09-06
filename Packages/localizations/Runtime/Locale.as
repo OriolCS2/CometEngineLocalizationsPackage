@@ -16,7 +16,11 @@ namespace Localization
 
 		string GetValue()
 		{
-			return Language::get.GetLocalization(key);
+			if (currentLanguage is null)
+			{
+				return key;
+			}
+			return currentLanguage.GetLocalization(key);
 		}
 	}
 }
