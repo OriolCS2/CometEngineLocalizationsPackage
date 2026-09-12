@@ -2,6 +2,10 @@
 
 All notable changes to this package are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.0.9]
+### Fixed
+- Fix build error.
+
 ## [1.0.8]
 ### Fixed
 - The loaded language went missing after a play, so changing **Localizations/Active Editor Locale** stopped updating anything in the scene.
@@ -33,5 +37,6 @@ All notable changes to this package are documented in this file. The format foll
 ## [1.0.0]
 ### Added
 - Initial version.
+
 
 

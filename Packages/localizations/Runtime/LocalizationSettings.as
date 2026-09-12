@@ -85,7 +85,7 @@ namespace Localization
 #else
 		void OnStart()
 		{
-			Language().Load(LanguageManager::DEFAULT_LANGUAGE);
+			Language().Load(LocalizationSettings::DEFAULT_LANGUAGE);
 		}
 #endif
 	}

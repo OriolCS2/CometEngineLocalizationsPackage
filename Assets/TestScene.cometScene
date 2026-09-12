@@ -155,6 +155,9 @@
                     "Enabled": true,
                     "RepeatDelay": 0.5,
                     "RepeatRate": 0.1,
+                    "TabNavigation": true,
+                    "FocusWrapAround": true,
+                    "FocusScope": 0,
                     "Selected": {
                         "EntID": "0",
                         "EntSharedID": "0",
@@ -163,7 +166,7 @@
                         "OutsideEnt": false,
                         "RootShared": "0",
                         "RootInside": false,
-                        "BehaType": 0,
+                        "BehaType": "",
                         "BehaID": "0"
                     },
                     "MouseLeftClickGroup": "197262063163126120",
@@ -211,11 +214,11 @@
                         "y": 0.5
                     },
                     "Size": {
-                        "x": 526.39,
+                        "x": 601.739,
                         "y": 228.931
                     },
-                    "Left": -263.195,
-                    "Right": -263.195,
+                    "Left": -300.87,
+                    "Right": -300.87,
                     "Top": -114.466,
                     "Bottom": -114.466,
                     "Position": {
@@ -238,7 +241,7 @@
                 "2324746240297844333": {
                     "Type": "Text",
                     "Enabled": true,
-                    "Text": "Regalo",
+                    "Text": "Present",
                     "Font": "14",
                     "BBCodeEnabled": false,
                     "Bold": false,
@@ -254,6 +257,14 @@
                     "Overflow": 0,
                     "Wrapping": true,
                     "AutoContentSizeMode": 3,
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "TextDirection": 0,
                     "Color": {
                         "r": 1,
                         "g": 1,
