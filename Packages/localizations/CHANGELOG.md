@@ -2,6 +2,10 @@
 
 All notable changes to this package are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com).
 
+## [1.0.10]
+### Added
+- Method `SetKey` at the class `LocaleText`.
+
 ## [1.0.9]
 ### Fixed
 - Fix build error.

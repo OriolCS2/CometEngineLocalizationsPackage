@@ -12,6 +12,17 @@ namespace Localization
 		void Start()
 		{
 			text = Text::Get(entity);
+			UpdateText();
+		}
+
+		void SetKey(const string&in newKey)
+		{
+			locale.SetKey(newKey);
+			UpdateText();
+		}
+
+		private void UpdateText()
+		{
 			if (Object::IsNull(text))
 			{
 				Debug::LogWarning("LocaleText behaviour requires a Text behaviour on the same entity.");
