@@ -21,6 +21,16 @@ namespace Localization
 			UpdateText();
 		}
 
+		string GetKey() const
+		{
+			return locale.GetKey();
+		}
+
+		string GetValue() const
+		{
+			return locale.GetValue();
+		}
+
 		private void UpdateText()
 		{
 			if (Object::IsNull(text))

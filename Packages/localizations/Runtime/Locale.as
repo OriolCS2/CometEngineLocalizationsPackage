@@ -4,7 +4,7 @@ namespace Localization
 	{
 		[Serialize] private string key;
 
-		string GetKey()
+		string GetKey() const
 		{
 			return key;
 		}
@@ -14,7 +14,7 @@ namespace Localization
 			key = newKey;
 		}
 
-		string GetValue()
+		string GetValue() const
 		{
 			Language@ currentLanguage = Language::get;
 			if (currentLanguage is null)
