@@ -162,6 +162,8 @@ namespace Localization
 					EditorPrefs::Local().SetString(LOCALIZATIONS_CURRENT_LANGUAGE_KEY, language.availableLanguages[i]);
 					LoadLocalizations();
 					UpdateAllActiveLocales();
+					EditorApplication::RequestSceneRedraw();
+					EditorApplication::RequestRedraw();
 				}
 			}
 		}
