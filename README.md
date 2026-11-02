@@ -28,6 +28,7 @@ For your translation tabs:
 *   **Column 2:** **Context** (notes on where the text is used).
 *   **Subsequent Columns:** One column for each **Language** you support.
 *   *Note: Ensure the language order is identical across all tabs.*
+*   *CSV values can include commas, quotes, and line breaks. Keep these cells as plain text in Google Sheets; export/import handles CSV escaping automatically.*
 
 ![Google Sheet Setup](https://raw.githubusercontent.com/OriolCS2/CometEngineLocalizationsPackage/main/TutorialImages/Tuto1.png)
 

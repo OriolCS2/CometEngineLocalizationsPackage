@@ -227,7 +227,7 @@ namespace Localization
 						return;
 					}
 
-					array<string> pages = indexPageData.split("\n");
+					array < array < string>> pages = ParseCsv(indexPageData);
 					uint totalPages = pages.length();
 					if (totalPages > 0)
 					{
@@ -247,7 +247,7 @@ namespace Localization
 						array<string> filesCreated;
 						for (uint i = 0; i < pages.length(); i++)
 						{
-							array<string> pageData = pages[i].split(",");
+							array<string> pageData = pages[i];
 							if (pageData.length() >= 2)
 							{
 								string filePath = LoadPage(pageData[0], pageData[1]);
@@ -258,7 +258,7 @@ namespace Localization
 							}
 							else
 							{
-								Debug::LogError("Invalid page index data format for page " + (i + 1) + ": " + pages[i]);
+								Debug::LogError("Invalid page index data format for page " + (i + 1) + ". Expected at least 2 columns.");
 								continue;
 							}
 						}
@@ -304,35 +304,28 @@ namespace Localization
 			string pageData;
 			if (Shell::ExecuteCommandWithOutput("curl -sL \"" + LocalizationSettings::Get().GoogleSheetDownloadURL + pageGid + "\"", pageData))
 			{
-				string filteredPageData;
-				array<string> lines = pageData.split("\n");
-				uint lineCount = lines.length();
-				for (uint i = 0; i < lineCount; i++)
+				array < array < string>> rows = ParseCsv(pageData);
+				array < array < string>> filteredRows;
+				uint rowCount = rows.length();
+				for (uint i = 0; i < rowCount; i++)
 				{
-					array<string> columns = lines[i].split(",");
+					array<string> columns = rows[i];
 					uint columnCount = columns.length();
-					string columnData;
+					array<string> filteredRow;
 					for (uint j = 0; j < columnCount; j++)
 					{
 						if (j != CONTEXT_COLUMN_INDEX)
 						{
-							if (!columnData.isEmpty())
-							{
-								columnData += ",";
-							}
-							columnData += columns[j];
+							filteredRow.insertLast(columns[j]);
 						}
 					}
 
-					if (!columnData.isEmpty())
+					if (!filteredRow.isEmpty())
 					{
-						filteredPageData += columnData;
-						if (i < lineCount - 1)
-						{
-							filteredPageData += "\n";
-						}
+						filteredRows.insertLast(filteredRow);
 					}
 				}
+				string filteredPageData = BuildCsv(filteredRows);
 
 				string filePath = LocalizationSettings::Get().AssetsLocalizationsPath + pageName + ".csv";
 				if (!AssetDataBase::CreateResource(filePath, filteredPageData, true))
@@ -347,6 +340,132 @@ namespace Localization
 				Debug::LogError("Failed to download localization page: " + pageName);
 			}
 			return "";
+		}
+
+		private array < array < string>> ParseCsv(const string&in csvData) const
+		{
+			array < array < string>> rows;
+			if (csvData.isEmpty())
+			{
+				return rows;
+			}
+
+			array<string> currentRow;
+			string currentCell;
+			bool insideQuotes = false;
+			uint csvLength = csvData.length();
+			for (uint i = 0; i < csvLength; i++)
+			{
+				string character = csvData.substr(i, 1);
+				if (character == "\"")
+				{
+					if (insideQuotes && (i + 1) < csvLength && csvData.substr(i + 1, 1) == "\"")
+					{
+						currentCell += "\"";
+						i++;
+					}
+					else
+					{
+						insideQuotes = !insideQuotes;
+					}
+				}
+				else if (character == "," && !insideQuotes)
+				{
+					currentRow.insertLast(currentCell);
+					currentCell = "";
+				}
+				else if ((character == "\n" || character == "\r") && !insideQuotes)
+				{
+					if (character == "\r" && (i + 1) < csvLength && csvData.substr(i + 1, 1) == "\n")
+					{
+						i++;
+					}
+
+					currentRow.insertLast(currentCell);
+					currentCell = "";
+					if (!IsCsvRowEmpty(currentRow))
+					{
+						rows.insertLast(currentRow);
+					}
+					currentRow.resize(0);
+				}
+				else
+				{
+					currentCell += character;
+				}
+			}
+
+			currentRow.insertLast(currentCell);
+			if (!IsCsvRowEmpty(currentRow))
+			{
+				rows.insertLast(currentRow);
+			}
+
+			return rows;
+		}
+
+		private string BuildCsv(const array < array < string>>&in rows) const
+		{
+			string csvData;
+			uint rowCount = rows.length();
+			for (uint i = 0; i < rowCount; i++)
+			{
+				array<string> row = rows[i];
+				uint columnCount = row.length();
+				for (uint j = 0; j < columnCount; j++)
+				{
+					if (j > 0)
+					{
+						csvData += ",";
+					}
+					csvData += EscapeCsvCell(row[j]);
+				}
+
+				if (i < rowCount - 1)
+				{
+					csvData += "\n";
+				}
+			}
+			return csvData;
+		}
+
+		private string EscapeCsvCell(const string&in value) const
+		{
+			bool needsQuotes = value.findFirst(",") >= 0 || value.findFirst("\"") >= 0 || value.findFirst("\n") >= 0 || value.findFirst("\r") >= 0;
+			if (!needsQuotes)
+			{
+				return value;
+			}
+
+			string escapedValue = "\"";
+			uint valueLength = value.length();
+			for (uint i = 0; i < valueLength; i++)
+			{
+				string character = value.substr(i, 1);
+				if (character == "\"")
+				{
+					escapedValue += "\"\"";
+				}
+				else
+				{
+					escapedValue += character;
+				}
+			}
+			escapedValue += "\"";
+			return escapedValue;
+		}
+
+		private bool IsCsvRowEmpty(const array<string>&in row) const
+		{
+			uint rowLength = row.length();
+			for (uint i = 0; i < rowLength; i++)
+			{
+				if (!row[i].isEmpty())
+				{
+					return false;
+				}
+			}
+			return true;
 		}
 
 		private string WrapText(const string&in text, float width)
