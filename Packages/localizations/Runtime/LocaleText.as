@@ -45,6 +45,8 @@ namespace Localization
 		void OnEdited()
 		{
 			Start();
+			EditorApplication::RequestSceneRedraw();
+			EditorApplication::RequestRedraw();
 		}
 #endif
 	}

@@ -114,6 +114,8 @@ namespace Localization
 							{
 								GUI::SaveState();
 								locale.SetKey(isSelected ? "" : key);
+								EditorApplication::RequestSceneRedraw();
+								EditorApplication::RequestRedraw();
 								GUI::CloseCurrentPopup();
 							}
 						}
